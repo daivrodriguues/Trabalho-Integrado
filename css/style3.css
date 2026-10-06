@@ -87,21 +87,23 @@ nav a:hover,nav a.ativo{background:var(--roxo);color:white}
   height:190px;
   border-radius:50%;
   background:var(--amarelo);
-  top:20px;
-  right:100px
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .hierar {
     position:relative;
     font-size:9rem;
     z-index:0;
     width:190px;
-    top:-27px;
+    top: 38%;
     filter:drop-shadow(0 10px 8px #0003)
 }
 @media (max-width: 800px) {
     .hierar {
-        top: 8px;
-        right: 8px;
+        top: 48%;
+        right: 0%;
+        transform: translate (40%, 90%);
     }
 }
 .macaco-card p{position:relative;z-index:2;color:var(--roxo);font-weight:900}
