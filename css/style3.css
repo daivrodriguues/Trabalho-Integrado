@@ -147,30 +147,24 @@ nav a:hover,nav a.ativo{background:var(--roxo);color:white}
     }
 }
 .capalivro{
-    position:absolute;
-    top:60px;
-    left:50%;
-    transform:translateX(-50%);
-    width:80%;
-    height:auto;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 @media (max-width: 800px) {
   .capalivro {
-    position:absolute;
-    transform:translateX(-50%);
-    top:76px;
-    width:80%;
-    height:auto;
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: auto;
   }
 }
-.capafilme{
-    position:absolute;
-    top:440px;
-    left:50%;
-    transform:translateX(-50%);
-    width:80%;
-    height:auto;
-    display:block;
+.capafilme {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 @media (max-width: 800px) {
   .capafilme{
