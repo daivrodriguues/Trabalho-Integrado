@@ -1,4 +1,4 @@
-*{box-sizing:border-box;margin:0;padding:0}
+{box-sizing:border-box;margin:0;padding:0}
 :root{
   --azul-claro:#889dfc;
   --amarelo:#fcdf88;
@@ -350,7 +350,7 @@ nav a{
 }
   .sobreCC {
     height:120px;
-}
+  }
 #orangotangos .table-box {
     min-width: 0;
     max-width: 100%;
@@ -361,4 +361,4 @@ nav a{
     width: 100%;
     table-layout: fixed;
     word-break: break-word;
-}
+  }
