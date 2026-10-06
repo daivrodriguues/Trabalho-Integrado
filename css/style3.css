@@ -351,3 +351,14 @@ nav a{
   .sobreCC {
     height:120px;
 }
+#orangotangos .table-box {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#orangotangos table {
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
+}
