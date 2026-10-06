@@ -310,14 +310,14 @@ nav a{
     float: center;
     width: 300px;
     height: 420px;
-    margin: 20px 0 5px 100px;
+    margin: 20px 0 5px 80px;
 }
 @media (max-width: 800px) {
   .orang {
      float: center;
      width: 200px;
      height: 300px;
-     margin: auto;
+     margin: 20px 0 5px 70px;
   }
 }
 #orangotangos .table-box {
