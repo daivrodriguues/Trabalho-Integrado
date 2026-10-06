@@ -328,17 +328,14 @@ nav a{
     #orangotangos .table-box {
         width: 100%;
         min-width: 0;
-        overflow: hidden;
-    }
-
-    #orangotangos table {
-        width: 100%;
+        overflow-x: hidden;
     }
 
     #orangotangos .orang {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        width: 200px;
+        height: 300px;
+        margin: 20px auto 5px;
     }
 }
 @media(max-width:800px){
