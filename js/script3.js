@@ -51,45 +51,81 @@ if (quiz && botaoResultado) {
   verificarRespostas();
 
 
-  // Resultado
-  quiz.addEventListener("submit", function (e) {
+// Resultado
+quiz.addEventListener("submit", function (e) {
 
-    e.preventDefault();
+  e.preventDefault();
 
-    const respostas = {
-      q1: "c",
-      q2: "a",
-      q3: "a",
-      q4: "b",
-      q5: "c",
-      q6: "a",
-      q7: "c",
-      q8: "b",
-      q9: "b",
-      q10: "a",
-    };
+  const respostas = {
+    q1: "c",
+    q2: "a",
+    q3: "a",
+    q4: "b",
+    q5: "c",
+    q6: "a",
+    q7: "c",
+    q8: "b",
+    q9: "b",
+    q10: "a",
+  };
 
-    let pontos = 0;
+  let pontos = 0;
 
-    for (const questao in respostas) {
+  for (const questao in respostas) {
 
-      const resposta = quiz.querySelector(
-        `input[name="${questao}"]:checked`
+    const resposta = quiz.querySelector(
+      `input[name="${questao}"]:checked`
+    );
+
+    const fieldset = resposta.closest("fieldset");
+
+    // Remove o feedback antigo, caso o usuário envie novamente
+    const feedbackAntigo = fieldset.querySelector(".feedback");
+
+    if (feedbackAntigo) {
+      feedbackAntigo.remove();
+    }
+
+    const feedback = document.createElement("p");
+    feedback.classList.add("feedback");
+
+    if (resposta.value === respostas[questao]) {
+
+      pontos++;
+
+      feedback.classList.add("correta");
+      feedback.textContent = "✓ Resposta correta!";
+
+    } else {
+
+      feedback.classList.add("incorreta");
+
+      // Encontra a alternativa correta
+      const alternativaCorreta = fieldset.querySelector(
+        `input[value="${respostas[questao]}"]`
       );
 
-      if (resposta && resposta.value === respostas[questao]) {
-        pontos++;
-      }
+      // Pega o texto da alternativa correta
+      const textoCorreto =
+        alternativaCorreta.parentElement.textContent.trim();
+
+      feedback.innerHTML =
+        `✗ Resposta errada!<br>
+        <strong>Resposta correta:</strong> ${textoCorreto}`;
     }
 
-    const resultado = document.querySelector("#resultado");
+    // Coloca o feedback no final da questão
+    fieldset.appendChild(feedback);
+  }
 
-    if (resultado) {
-      resultado.textContent =
-        `Você acertou ${pontos} de 10 questões.`;
-    }
+  const resultado = document.querySelector("#resultado");
 
-  });
+  if (resultado) {
+    resultado.textContent =
+      `Você acertou ${pontos} de 10 questões.`;
+  }
+
+});
 
 }
 const botoesPaginas = document.querySelectorAll("[data-pagina]");
