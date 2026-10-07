@@ -62,7 +62,7 @@ quiz.addEventListener("submit", function (e) {
     q3: "a",
     q4: "b",
     q5: "c",
-    q6: "c",
+    q6: "a",
     q7: "a",
     q8: "b",
     q9: "c",
