@@ -310,7 +310,7 @@ nav a{
     float: center;
     width: 300px;
     height: 420px;
-    margin: 20px 0 5px 100px;
+    margin: 20px 0 40px 100px;
 }
 @media (max-width: 800px) {
   .orang {
@@ -319,17 +319,6 @@ nav a{
      height: 300px;
      margin: 20px 0 5px 70px;
   }
-}
-#orangotangos .table-box {
-    min-width: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-#orangotangos table {
-    width: 100%;
-    table-layout: fixed;
-    word-break: break-word;
 }
 @media(max-width:800px){
   .menu-btn{display:block}
@@ -357,4 +346,33 @@ nav a{
 }
   .sobreCC {
     height:120px;
+  }
+#orangotangos .table-box {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#orangotangos table {
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
+}
+.feedback {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.feedback.correta {
+  color: #1f7a3d;
+  background: #e8f7ed;
+  border: 1px solid #369055;
+}
+
+.feedback.incorreta {
+  color: #a33a3a;
+  background: #fdeaea;
+  border: 1px solid #e09a9a;
 }
