@@ -1,4 +1,4 @@
-*{box-sizing:border-box;margin:0;padding:0}
+{box-sizing:border-box;margin:0;padding:0}
 :root{
   --azul-claro:#889dfc;
   --amarelo:#fcdf88;
@@ -375,4 +375,53 @@ nav a{
   color: #a33a3a;
   background: #fdeaea;
   border: 1px solid #e09a9a;
+}
+.reiniciar {
+  background: var(--azul-escuro);
+  margin-left: 10px;
+}
+.resultado {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid;
+}
+
+.resultado.mostrar {
+  display: block;
+}
+
+.resultado strong {
+  font-size: 1.4rem;
+}
+
+/* 0 a 4 acertos */
+.resultado-vermelho {
+  color: #a33a3a;
+  background: #fdeaea;
+  border-color: #e09a9a;
+}
+
+/* 5 a 6 acertos */
+.resultado-amarelo {
+  color: #8a6800;
+  background: #fff8d9;
+  border-color: #e5ca62;
+}
+
+/* 7 a 8 acertos */
+.resultado-azul {
+  color: var(--azul-escuro);
+  background: #eaf0ff;
+  border-color: #91a9e8;
+}
+
+/* 9 a 10 acertos */
+.resultado-verde {
+  color: #1f7a3d;
+  background: #e8f7ed;
+  border-color: #6bc48a;
 }
