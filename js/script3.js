@@ -14,6 +14,7 @@ if (menuBtn && nav) {
 
 const quiz = document.querySelector("#quizForm");
 const botaoResultado = document.querySelector("#botaoResultado");
+const botaoReiniciar = document.querySelector("#botaoReiniciar");
 
 if (quiz && botaoResultado) {
 
@@ -63,9 +64,9 @@ quiz.addEventListener("submit", function (e) {
     q4: "b",
     q5: "c",
     q6: "a",
-    q7: "a",
+    q7: "c",
     q8: "b",
-    q9: "c",
+    q9: "b",
     q10: "a",
   };
 
@@ -120,12 +121,83 @@ quiz.addEventListener("submit", function (e) {
 
   const resultado = document.querySelector("#resultado");
 
-  if (resultado) {
-    resultado.textContent =
-      `Você acertou ${pontos} de 10 questões.`;
-  }
+  const porcentagem = (pontos / 10) * 100;
+
+let mensagem = "";
+let classe = "";
+
+if (porcentagem < 50) {
+
+  mensagem = "Estude mais! Você ainda precisa revisar o conteúdo.";
+  classe = "resultado-vermelho";
+
+} else if (porcentagem < 70) {
+
+  mensagem = "Bom começo! Você entendeu parte do conteúdo, mas ainda dá para melhorar.";
+  classe = "resultado-amarelo";
+
+} else if (porcentagem < 90) {
+
+  mensagem = "Muito bem! Você foi bem, mas ainda dá para melhorar alguns pontos.";
+  classe = "resultado-azul";
+
+} else {
+
+  mensagem = "Excelente! Você demonstrou um ótimo domínio do conteúdo.";
+  classe = "resultado-verde";
+
+}
+
+resultado.className = "resultado mostrar " + classe;
+
+resultado.innerHTML =
+
+resultado.innerHTML =
+  `<strong>${pontos}/10 (${porcentagem}%)</strong><br>
+   ${mensagem}`;
 
 });
+
+  // Reiniciar quiz
+if (botaoReiniciar) {
+
+  botaoReiniciar.addEventListener("click", function () {
+
+    // Desmarca todas as respostas
+    const alternativas = quiz.querySelectorAll(
+      'input[type="radio"]'
+    );
+
+    alternativas.forEach((alternativa) => {
+      alternativa.checked = false;
+    });
+
+    // Remove os feedbacks
+    const feedbacks = quiz.querySelectorAll(".feedback");
+
+    feedbacks.forEach((feedback) => {
+      feedback.remove();
+    });
+
+    // Limpa o resultado
+    const resultado = document.querySelector("#resultado");
+
+    if (resultado) {
+      resultado.textContent = "";
+      resultado.className = "resultado";
+    }
+
+    // Desativa novamente o botão de resultado
+    botaoResultado.disabled = true;
+
+    // Volta para o topo do quiz
+    quiz.scrollIntoView({
+      behavior: "smooth"
+    });
+
+  });
+
+}
 
 }
 const botoesPaginas = document.querySelectorAll("[data-pagina]");
